@@ -1,0 +1,98 @@
+:root {
+  --ig-black: #262626;
+  --ig-gray-text: #8e8e8e;
+  --ig-border: #dbdbdb;
+  --ig-blue: #0095f6;
+  --ig-bg: #fafafa;
+  --ig-white: #ffffff;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background: var(--ig-bg);
+  color: var(--ig-black);
+}
+
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; }
+
+.app-shell {
+  max-width: 470px;
+  margin: 0 auto;
+  min-height: 100vh;
+  background: var(--ig-white);
+  border-left: 1px solid var(--ig-border);
+  border-right: 1px solid var(--ig-border);
+  padding-bottom: 60px;
+}
+
+.top-nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 54px;
+  padding: 0 16px;
+  background: var(--ig-white);
+  border-bottom: 1px solid var(--ig-border);
+}
+.top-nav-logo { font-size: 24px; font-weight: 600; font-family: Georgia, 'Times New Roman', serif; }
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 470px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 50px;
+  background: var(--ig-white);
+  border-top: 1px solid var(--ig-border);
+}
+
+.icon-btn { background: none; border: none; font-size: 20px; color: var(--ig-black); padding: 6px; }
+
+.login-screen { display: flex; align-items: center; justify-content: center; min-height: 100vh; padding: 16px; }
+.login-box { width: 100%; max-width: 350px; border: 1px solid var(--ig-border); border-radius: 1px; padding: 36px 40px; text-align: center; }
+.login-logo { font-family: Georgia, 'Times New Roman', serif; font-size: 40px; margin-bottom: 24px; }
+.login-box input { width: 100%; padding: 9px 8px; margin-bottom: 6px; background: #fafafa; border: 1px solid var(--ig-border); border-radius: 3px; font-size: 12px; }
+.login-box button { width: 100%; margin-top: 8px; padding: 7px 16px; background: var(--ig-blue); color: var(--ig-white); border: none; border-radius: 8px; font-weight: 600; font-size: 14px; }
+.login-box button:disabled { opacity: 0.6; }
+.login-error { color: #ed4956; font-size: 13px; margin: 8px 0 0; }
+
+.feed { display: flex; flex-direction: column; }
+.empty-feed, .loading-screen { padding: 60px 16px; text-align: center; color: var(--ig-gray-text); }
+
+.post-card { border-bottom: 1px solid var(--ig-border); padding-bottom: 8px; }
+.post-header { display: flex; align-items: center; justify-content: space-between; padding: 10px 12px; }
+.post-author { display: flex; align-items: center; gap: 10px; }
+.username { font-size: 14px; font-weight: 600; }
+.post-image-wrap { width: 100%; aspect-ratio: 1 / 1; background: #f0f0f0; }
+.post-image { width: 100%; height: 100%; object-fit: cover; display: block; }
+.post-actions { display: flex; gap: 4px; padding: 8px 8px 0; }
+.post-caption { padding: 4px 12px 0; font-size: 14px; }
+.post-timestamp { padding: 4px 12px 0; font-size: 10px; color: var(--ig-gray-text); text-transform: uppercase; }
+
+.avatar { border-radius: 50%; object-fit: cover; background: #ddd; }
+.avatar-xs { width: 24px; height: 24px; }
+.avatar-sm { width: 32px; height: 32px; }
+.avatar-lg { width: 86px; height: 86px; }
+
+.create-post { padding: 16px; }
+.create-post textarea { width: 100%; margin-top: 12px; padding: 8px; border: 1px solid var(--ig-border); border-radius: 6px; font-family: inherit; }
+.create-post button { margin-top: 12px; padding: 8px 20px; background: var(--ig-blue); color: var(--ig-white); border: none; border-radius: 8px; font-weight: 600; }
+.post-preview { width: 100%; margin-top: 12px; border-radius: 6px; }
+
+.profile-page { padding: 16px; }
+.profile-header { display: flex; gap: 20px; align-items: center; margin-bottom: 20px; }
+.follow-btn { margin-top: 8px; padding: 6px 24px; background: var(--ig-blue); color: var(--ig-white); border: none; border-radius: 8px; font-weight: 600; font-size: 14px; }
+.profile-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; }
+.profile-grid img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; }
