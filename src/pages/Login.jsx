@@ -24,7 +24,7 @@ export default function Login() {
         <form onSubmit={handleSubmit}>
           <input
             type="text"
-            placeholder="Username"
+            placeholder="Phone number, username, or email"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             autoCapitalize="none"
@@ -41,7 +41,23 @@ export default function Login() {
           <button type="submit" disabled={submitting}>
             {submitting ? 'Logging in…' : 'Log in'}
           </button>
+
+          <p className="login-forgot">Forgot password?</p>
+
+          <div className="login-divider">
+            <span /> <p>OR</p> <span />
+          </div>
+
+          <p className="login-fb">
+            <span className="login-fb-icon">f</span> Log in with Facebook
+          </p>
         </form>
+      </div>
+
+      <div className="login-signup-box">
+        <p>
+          Don't have an account? <span className="signup-link">Sign up</span>
+        </p>
       </div>
     </div>
   );
